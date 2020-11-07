@@ -18,3 +18,6 @@ class TestAttraction(unittest.TestCase):
 
     def test_check_attraction_has_a_city(self):
         self.assertEqual("Paris", self.attraction.city.name)
+
+    def test_check_attraction_has_a_country(self):
+        self.assertEqual("France", self.attraction.city.country.name)
