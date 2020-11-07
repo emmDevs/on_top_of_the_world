@@ -20,5 +20,5 @@ CREATE TABLE attractions (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     cost FLOAT,
-    city_id INT REFERENCES cities(id) ON DELETE CASCADE
+    city_id INT REFERENCES cities(id) ON DELETE CASCADE 
 );

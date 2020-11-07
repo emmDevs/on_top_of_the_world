@@ -5,7 +5,7 @@ from models.city import City
 from models.country import Country
 
 def save(attraction):
-    sql = "INSERT INTO attractions(name, cost, city) VALUES (%s, %s, %s) RETURNING id"
+    sql = "INSERT INTO attractions(name, cost, city_id) VALUES (%s, %s, %s) RETURNING id"
     values = [attraction.name, attraction.cost, attraction.city.id]
     results = run_sql(sql, values)
     id = results[0]['id']
@@ -45,6 +45,6 @@ def select_attraction_by_city(city):
         attractions.append(attraction)
     return attractions
 
-    def delete_all():
-        sql = "DELETE FROM attractions"
-        run_sql(sql)
+def delete_all():
+    sql = "DELETE FROM attractions"
+    run_sql(sql)

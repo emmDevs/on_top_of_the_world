@@ -6,7 +6,8 @@ def save(country):
     sql = "INSERT INTO countries(name, continent) VALUES ( %s, %s ) RETURNING id"
     values = (country.name, country.continent)
     results = run_sql(sql, values)
-    country.id = results[0]['id']
+    id = results[0]['id']
+    country.id = id
     return country
 
 def select_all():

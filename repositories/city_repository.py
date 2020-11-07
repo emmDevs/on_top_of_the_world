@@ -4,7 +4,7 @@ from models.city import City
 from models.country import Country
 
 def save(city):
-    sql = "INSERT INTO cities(name, country, notes, visited) VALUES (%s, %s, %s, %s) RETURNING id"
+    sql = "INSERT INTO cities(name, country_id, notes, visited) VALUES (%s, %s, %s, %s) RETURNING id"
     values = [city.name, city.country.id, city.notes, city.visited] 
     results = run_sql(sql, values)
     id = results[0]['id']
