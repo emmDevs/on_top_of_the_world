@@ -12,3 +12,6 @@ class TestAttraction(unittest.TestCase):
 
     def test_check_attraction_has_a_name(self):
         self.assertEqual("Eiffel Tower", self.attraction.name)
+
+    def test_check_attraction_has_a_cost(self):
+        self.assertEqual(25.90, self.attraction.cost)
