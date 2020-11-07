@@ -24,3 +24,7 @@ class TestCity(unittest.TestCase):
 
     def test_check_city_has_been_visited__false(self):
         self.assertEqual(False, self.city.visited)
+
+    def test_check_city_has_been_visited__true(self):
+        self.city.mark_as_visited()
+        self.assertEqual(True, self.city.visited)
