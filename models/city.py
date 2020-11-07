@@ -1,0 +1,7 @@
+class City:
+    
+    def __init__(self, name, country, notes, visited=False, id=None):
+        self.name = name
+        self.country = country
+        self.notes = notes
+        self.visited = visited
