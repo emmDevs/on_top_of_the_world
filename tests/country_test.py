@@ -8,3 +8,6 @@ class TestCountry(unittest.TestCase):
 
     def test_country_has_a_name(self):
         self.assertEqual("France", self.country.name)
+
+    def test_country_has_a_continent(self):
+        self.assertEqual("Europe", self.country.continent)
