@@ -21,3 +21,6 @@ class TestCity(unittest.TestCase):
 
     def test_check_city_has_notes__no_notes(self):
         self.assertEqual(None, self.city2.notes)
+
+    def test_check_city_has_been_visited__false(self):
+        self.assertEqual(False, self.city.visited)
