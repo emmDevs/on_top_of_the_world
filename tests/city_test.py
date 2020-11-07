@@ -13,3 +13,6 @@ class TestCity(unittest.TestCase):
 
     def test_check_city_has_a_country(self):
         self.assertEqual("France", self.country.name)
+
+    def test_check_city_has_notes(self):
+        self.assertEqual("cold in winter!", self.city.notes)
