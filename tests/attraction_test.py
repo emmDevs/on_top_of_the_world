@@ -21,3 +21,6 @@ class TestAttraction(unittest.TestCase):
 
     def test_check_attraction_has_a_country(self):
         self.assertEqual("France", self.attraction.city.country.name)
+
+    def test_check_attraction_has_a_continent(self):
+        self.assertEqual("Europe", self.attraction.city.country.continent)
