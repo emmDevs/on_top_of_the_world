@@ -12,7 +12,10 @@ def display_cities():
     return render_template("cities/index.html", cities = cities)
 
 # SHOW
-
+@cities_blueprint.route("/cities/<id>", methods=["GET"])
+def show_city(id):
+    city = city_repository.select(id)
+    return render_template("cities/show.html", city = city)
 
 
 # NEW
