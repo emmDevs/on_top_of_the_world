@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="/countries/{{country.id}}" method="POST">
+    <div>
+        <label for="name">Country name:</label>
+        <input type="text" name="name" value="{{country.name}}" required autofocus>
+    </div>
+    <div>
+        <label for="continent">Continent:</label>
+        <select name="continent" id="continent">
+            <option value="{{country.continent}}">{{country.continent}}</option>
+            <option value="africa">Africa</option>
+            <option value="antartica">Antartica</option>
+            <option value="asia">Asia</option>
+            <option value="australia">Australia</option>
+            <option value="europe">Europe</option>
+            <option value="north_america">North America</option>
+            <option value="south_america">South America</option>
+        </select>
+    </div>
+    <button type="submit">Edit Country</button>
+    </form>
+{% endblock content %}
