@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+    <div>
+        {% for city in cities %}
+            <p><a href="/cities/{{city.id}}">{{city.name}}</a></p>
+
+        {% endfor %}
+    </div>
+    <form action="cities/edit">
+        <button type="submit">
+            Add New City
+        </button>
+
+    </form>
+
+{% endblock content %}

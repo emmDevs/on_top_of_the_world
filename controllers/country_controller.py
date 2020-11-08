@@ -29,7 +29,7 @@ def list_cities_for_country(id):
 @ countries_blueprint.route("/countries/new", methods=["GET"])
 def new_country():
     countries = country_repository.select_all()
-    return render_template("/countries/new.html", countries = countries)
+    return render_template("countries/new.html", countries = countries)
 
 # CREATE
 
@@ -62,7 +62,7 @@ def update_country(id):
 
 # DELETE
 
-@countries_blueprint.route("countries/<id>/delete", methods=["POST"])
+@countries_blueprint.route("/countries/<id>/delete", methods=["POST"])
 def delete_country(id):
     country_repository.delete(id)
     return redirect("/countries")

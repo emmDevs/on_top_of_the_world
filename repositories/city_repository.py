@@ -18,7 +18,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        city = City(row['name'], row['country'], row['notes'], row['visited'], row['id'])
+        city = City(row['name'], row['country_id'], row['notes'], row['visited'], row['id'])
         cities.append(city)
     return cities
 
@@ -29,7 +29,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        city = City(result['name'], result['country'], result['notes'], result['visited'], result['id'])
+        city = City(result['name'], result['country_id'], result['notes'], result['visited'], result['id'])
     return city
 
 def select_city_by_country(country):
@@ -40,7 +40,7 @@ def select_city_by_country(country):
     results = run_sql(sql, values)
 
     for row in results:
-        city = City(row['name'], row['country'], row['notes'], row['visited'], row['id'])
+        city = City(row['name'], row['country_id'], row['notes'], row['visited'], row['id'])
         cities.append(city)
     return cities
 
