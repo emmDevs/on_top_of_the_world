@@ -19,7 +19,7 @@ def display_attractions():
 
 
 # NEW
-
+# @attractions_blueprint.route("/attractions/new", methods=["GET"])
 
 # CREATE
 

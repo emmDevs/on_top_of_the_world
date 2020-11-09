@@ -7,9 +7,9 @@
     <p>Country: {{city.country.name}}</p>
     <p>Notes: {{city.notes}}</p>
     {% if city.visited == True %}
-        <i class="fa fa-check fa-2x" style="color:green" aria-hidden="true"></i>
+       <label for="">Visited?<i class="fa fa-check fa-2x" style="color:green" aria-hidden="true"></i></label>
         {% else %}
-        <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+        <label for="">Visited?<i class="fa fa-times fa-2x" aria-hidden="true"></i></label>
         {% endif %}
 </div>
 

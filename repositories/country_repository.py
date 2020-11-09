@@ -45,3 +45,16 @@ def delete(id):
     sql = "DELETE FROM countries WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+# def select_country_from_city(id):
+#     def select_city_by_country(id):
+#     cities = []
+#     # I want to return the list of cities in alphabetical order
+#     sql = "SELECT * FROM cities WHERE country_id = %s ORDER BY name ASC"
+#     values = [id]
+#     results = run_sql(sql, values)
+
+#     for row in results:
+#         city = City(row['name'], row['country_id'], row['notes'], row['visited'], row['id'])
+#         cities.append(city)
+#     return cities
