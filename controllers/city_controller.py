@@ -42,6 +42,10 @@ def create_city():
     return redirect("/cities")
 
 # EDIT
-
-
+@cities_blueprint.route("/cities/<id>/edit", methods=["GET"])
+def edit_city(id):
+    city = city_repository.select(id)
+    return render_template("cities/edit.html", city = city)
 # UPDATE
+
+# DELETE

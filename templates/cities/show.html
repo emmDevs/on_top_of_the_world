@@ -12,5 +12,9 @@
         <label for="">Visited?<i class="fa fa-times fa-2x" aria-hidden="true"></i></label>
         {% endif %}
 </div>
+<div>
+    <p><a href="/cities/{{city.id}}/edit">Edit City</a></p>
+    <p><a href="/cities/{{city.id}}/delete">Delete City</a></p>
+</div>
 
 {% endblock content %}
