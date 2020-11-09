@@ -9,10 +9,10 @@
 <div>
     <label for="country">Country name:</label>
     <select name="country" id="country">
-        <option value="s{{city.country.name}}">{{city.country.name}}</option>
-    {% for country in countries %}
+        <option value="{{city.country.name}}">{{city.country.name}}</option>
+        {% for country in countries %}
         <option value="{{country.id}}">{{country.name}}</option>    
-    {% endfor %}
+        {% endfor %}
         <option value="select_country" disabled>Can't see the Country you need? Please create a Country first.</option>
 </select>
 </div>
