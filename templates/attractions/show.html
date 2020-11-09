@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+        <p>{{attraction.name}}</p>
+        <hr>
+        <p>Cost: {{attraction.cost}}</p>
+        <p>City: {{attraction.city.name}}</p>
+    </div>
+    <div>
+        <p><a href="/attractions/{{attraction.id}}/edit">Edit Attraction</a></p>
+    <p><a href="/attractions/{{attraction.id}}/delete">Delete Attraction</a></p>
+    </div>
+{% endblock content %} 

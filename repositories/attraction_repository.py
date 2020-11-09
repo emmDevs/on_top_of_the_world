@@ -54,3 +54,8 @@ def select_attraction_by_city(id):
 def delete_all():
     sql = "DELETE FROM attractions"
     run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM attractions WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

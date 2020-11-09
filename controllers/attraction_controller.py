@@ -15,7 +15,10 @@ def display_attractions():
 
 
 # SHOW
-
+@attractions_blueprint.route("/attractions/<id>", methods=["GET"])
+def show_attraction(id):
+    attraction = attraction_repository.select(id)
+    return render_template("attractions/show.html", attraction = attraction)
 
 
 # NEW
@@ -48,3 +51,7 @@ def create_attraction():
 
 
 # DELETE
+@attractions_blueprint.route("/attractions/<id>/delete", methods=["GET"])
+def delete_attraction(id):
+    attraction_repository.delete(id)
+    return redirect("/attractions")
