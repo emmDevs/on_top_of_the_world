@@ -15,11 +15,12 @@ def save(attraction):
 def select_all():
     attractions = []
 # I WANT TO ORDER THE ATTRACTIONS BY CITY
-    sql = "SELECT * FROM attractions ORDER BY city.id"
+    sql = "SELECT * FROM attractions ORDER BY name ASC" 
+    # ORDER BY city.id"
     results = run_sql(sql)
 
     for row in results:
-        attraction = Attraction(row['name'], row['cost'], row['city'], row['id'])
+        attraction = Attraction(row['name'], row['cost'], row['city_id'], row['id'])
         attractions.append(attraction)
     return attractions
 
