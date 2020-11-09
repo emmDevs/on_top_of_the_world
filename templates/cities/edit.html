@@ -8,8 +8,8 @@
 </div>
 <div>
     <label for="country">Country name:</label>
-    <select name="country" id="country">
-        <option value="{{city.country.name}}">{{city.country.name}}</option>
+    <select name="country_id" id="country">
+        <option value="{{city.country.id}}">{{city.country.name}}</option>
         {% for country in countries %}
         <option value="{{country.id}}">{{country.name}}</option>    
         {% endfor %}

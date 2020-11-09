@@ -3,6 +3,8 @@ from db.run_sql import run_sql
 from models.city import City
 from models.country import Country
 
+import repositories.country_repository as country_repository
+
 def save(city):
     sql = "INSERT INTO cities(name, country_id, notes, visited) VALUES (%s, %s, %s, %s) RETURNING id"
     values = [city.name, city.country.id, city.notes, city.visited] 
@@ -29,7 +31,8 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        city = City(result['name'], result['country_id'], result['notes'], result['visited'], result['id'])
+        country = country_repository.select(result['country_id'])
+        city = City(result['name'], country, result['notes'], result['visited'], result['id'])
     return city
 
 def select_city_by_country(id):
@@ -44,6 +47,22 @@ def select_city_by_country(id):
         cities.append(city)
     return cities
 
+def update(city):
+    sql = "UPDATE cities SET (name, country_id, notes, visited) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [city.name, city.country.id, city.notes, city.visited, city.id]
+    print(values)
+    run_sql(sql, values)
+
 def delete_all():
     sql = "DELETE FROM cities"
     run_sql(sql)    
+
+# def yes_or_no(id):
+#     sql = "SELECT visited FROM cities WHERE id = %s"
+#     values = [id]
+#     result = run_sql(sql, values)
+#     visited = result
+#     if visited = True:
+#         return yes
+#     else:
+#         return no
