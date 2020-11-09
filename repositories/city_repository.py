@@ -57,6 +57,11 @@ def delete_all():
     sql = "DELETE FROM cities"
     run_sql(sql)    
 
+def delete(id):
+    sql = "DELETE FROM cities WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
 # def yes_or_no(id):
 #     sql = "SELECT visited FROM cities WHERE id = %s"
 #     values = [id]
