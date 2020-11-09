@@ -32,11 +32,11 @@ def select(id):
         city = City(result['name'], result['country_id'], result['notes'], result['visited'], result['id'])
     return city
 
-def select_city_by_country(country):
+def select_city_by_country(id):
     cities = []
     # I want to return the list of cities in alphabetical order
     sql = "SELECT * FROM cities WHERE country_id = %s ORDER BY name ASC"
-    values = [country.id]
+    values = [id]
     results = run_sql(sql, values)
 
     for row in results:

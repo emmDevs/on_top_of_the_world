@@ -20,6 +20,10 @@ def show_city(id):
 
 # NEW
 
+@cities_blueprint.route("/cities/new", methods=["GET"])
+def new_city():
+    cities = city_repository.select_all()
+    return render_template("cities/new.html", cities = cities)
 
 # CREATE
 
