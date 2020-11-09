@@ -1,13 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<div>
+    {% for attraction in attractions %}
+        <p><a href="/attractions/{{attraction.id}}">{{attraction.name}}</a>:  {{attraction.city.name}} </p>
+    {% endfor %}
+</div>
     
-    <div>
+    <!-- <div>
+        {% for city in cities  %}
         {% for attraction in attractions %}
+            {% if city.name == attraction.city.name %}
+                <p>{{city.name}}</p>
             <p><a href="/attractions/{{attraction.id}}">{{attraction.name}}</a></p>
+            {% endif %}
         {% endfor %}
-    </div>
-    <form action="attraction/new"> 
+        {% endfor %}
+    </div> -->
+    <form action="attractions/new"> 
         <button type="submit">
         Add New Attraction
         </button>

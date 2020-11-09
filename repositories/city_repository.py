@@ -20,7 +20,8 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        city = City(row['name'], row['country_id'], row['notes'], row['visited'], row['id'])
+        country = country_repository.select(row['country_id'])
+        city = City(row['name'], country, row['notes'], row['visited'], row['id'])
         cities.append(city)
     return cities
 
@@ -43,7 +44,8 @@ def select_city_by_country(id):
     results = run_sql(sql, values)
 
     for row in results:
-        city = City(row['name'], row['country_id'], row['notes'], row['visited'], row['id'])
+        country = country_repository.select(row['country_id'])
+        city = City(row['name'], country, row['notes'], row['visited'], row['id'])
         cities.append(city)
     return cities
 

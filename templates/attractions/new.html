@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/attractions" method="POST">
+<div>
+    <label for="name">Attraction name:</label>
+    <input type="text" name="name" placeholder="Attraction name" required autofocus>
+</div>
+<div>
+    <label for="cost">Cost:</label>
+    <input type="number" name="cost" placeholder="Cost" required autofocus>
+</div>
+<div>
+    <label for="city">City name:</label>
+    <select name="city" id="city">
+        <option value="city" disabled selected hidden>Select City</option>
+    {% for city in cities %}
+        <option value="{{city.id}}">{{city.name}}</option>    
+    {% endfor %}
+        <option value="select_city" disabled>Can't see the City you need? Please create a City first.</option>
+</select>
+</div>
+<button type="submit">Add Attraction</button>
+</form>
+{% endblock content %}

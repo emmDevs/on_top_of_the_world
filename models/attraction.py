@@ -4,5 +4,6 @@ class Attraction:
         self.name = name
         self.cost = cost
         self.city = city
+        self.id = id
 
         

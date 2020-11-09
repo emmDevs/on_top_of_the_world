@@ -19,10 +19,24 @@ def display_attractions():
 
 
 # NEW
-# @attractions_blueprint.route("/attractions/new", methods=["GET"])
+@attractions_blueprint.route("/attractions/new", methods=["GET"])
+def new_attraction():
+    attractions = attraction_repository.select_all()
+    cities = city_repository.select_all()
+    return render_template("attractions/new.html", attractions = attractions, cities = cities)
 
 # CREATE
 
+@attractions_blueprint.route("/attractions", methods=['POST'])
+def create_attraction():
+    name = request.form["name"]
+    cost = request.form["cost"]
+    city_id = request.form["city"]
+
+    city = city_repository.select(city_id)
+    attraction = Attraction(name, cost, city)
+    attraction_repository.save(attraction)
+    return redirect("/attractions")
 
 
 # EDIT

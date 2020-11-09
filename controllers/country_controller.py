@@ -19,11 +19,6 @@ def show_country(id):
     cities = city_repository.select_city_by_country(id)
     return render_template("countries/show.html", country = country, cities = cities)
 
-# I want to list the cities under each country on the same html page
-# @countries_blueprint.route("/countries/<id>", methods=["GET"])
-
-#         return render_template("countries/show.html", cities = cities)
-
 # NEW
 
 @countries_blueprint.route("/countries/new", methods=["GET"])
