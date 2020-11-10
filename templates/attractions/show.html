@@ -6,8 +6,12 @@
         <p>Cost: {{attraction.cost}}</p>
         <p>City: {{attraction.city.name}}</p>
     </div>
-    <div>
-        <p><a href="/attractions/{{attraction.id}}/edit">Edit Attraction</a></p>
-    <p><a href="/attractions/{{attraction.id}}/delete">Delete Attraction</a></p>
-    </div>
+    <form action="/attractions/{{attraction.id}}/edit">
+        <button class="button" type="submit">Edit Attraction
+        </button>
+    </form>
+    <form action="/attractions/{{attraction.id}}/delete">
+        <button class="button" type="submit">Delete Attraction
+        </button>
+    </form>
 {% endblock content %} 

@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form action="/attractions/{{attraction.id}}" method="POST">
-<div>
-    <label for="name">Attraction name:</label>
+<form class="edit_attraction" action="/attractions/{{attraction.id}}" method="POST">
+<div class="edit_attraction_name">
+    <label for="name"><b>Attraction name:</b></label>
     <input type="text" name="name" value="{{attraction.name}}" required autofocus>
 </div>
 <div>
-    <label for="cost">Cost:</label>
+    <label for="cost"><b>Cost:</b></label>
     <input type="number" name="cost" min="0" step="0.01" value="{{attraction.cost}}" required autofocus>
 </div>
-<div>
-    <label for="city">City name:</label>
+<div class="edit_attraction_city_name">
+    <label for="city"><b>City name:</b></label>
     <select name="city_id" id="city">
         <option value="{{attraction.city.id}}">{{attraction.city.name}}</option>
     {% for city in cities %}
@@ -20,6 +20,8 @@
         <option value="select_city" disabled>Can't see the City you need? Please create a City first.</option>
 </select>
 </div>
-<button type="submit">Edit Attraction</button>
 </form>
+<section class="edit_attraction_button">
+<button class="button" type="submit">Edit Attraction</button>
+</section>
 {% endblock content %}

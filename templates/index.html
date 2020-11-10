@@ -1,16 +1,18 @@
 {% extends 'base.html'%}
 
 {% block content %}
+<Section class="index">
 <h1>Your World</h1>
 
 <p>Record your travel wishlist here!</p>
+</Section>
 
 <form action="/cities/visited">
-    <button type="submit">See where you have been!</button>
+    <button class="button" type="submit">See where you have been!</button>
 </form>
 
 <form action="/cities/not_visited">
-    <button type="submit">See where you want to go!
+    <button class="button" type="submit">See where you want to go!
     </button>
 </form>
 

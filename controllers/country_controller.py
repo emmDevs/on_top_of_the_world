@@ -52,7 +52,7 @@ def update_country(id):
 
     country = Country(name, continent, id)
     country_repository.update(country)
-    return redirect("/countries")
+    return redirect(f"/countries/{id}")
 
 
 # DELETE

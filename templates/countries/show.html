@@ -4,9 +4,17 @@
 <div>
     <p>{{country.name}}</p>
     <hr>
-    <p>Continent: {{country.continent}}</p>
-    <p><a href="/countries/{{country.id}}/edit">Edit Country</a></p>
-    <p><a href="/countries/{{country.id}}/delete">Delete Country</a></p>
+    <p>Continent: {{country.continent.capitalize()}}</p>
+    <form action="/countries/{{country.id}}/edit">
+        <button class="button" type="submit">Edit Country
+        </button>
+    </form>
+    <form action="/countries/{{country.id}}/delete">
+        <button class="button" type="submit">Delete Country
+        </button>
+    </form>
+    <!-- <p><a href="/countries/{{country.id}}/edit">Edit Country</a></p>
+    <p><a href="/countries/{{country.id}}/delete">Delete Country</a></p> -->
     <p>List of Cities in {{country.name}} that you would like to visit:</p>
     {% for city in cities %}
         <p>{{city.name}}</p>
