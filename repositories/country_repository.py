@@ -1,10 +1,12 @@
 from db.run_sql import run_sql
+import string
 
 from models.country import Country
 
 def save(country):
+    result = string.capwords(country.name)
     sql = "INSERT INTO countries(name, continent) VALUES ( %s, %s ) RETURNING id"
-    values = (country.name.capitalize(), country.continent)
+    values = (result, country.continent)
     results = run_sql(sql, values)
     id = results[0]['id']
     country.id = id
@@ -32,8 +34,9 @@ def select(id):
     return country
 
 def update(country):
+    result = string.capwords(country.name)
     sql = "UPDATE countries SET (name, continent) = (%s, %s) WHERE id = %s"
-    values = [country.name.capitalize(), country.continent, country.id]
+    values = [result, country.continent, country.id]
     print(values)
     run_sql(sql, values)
 

@@ -1,4 +1,5 @@
 from db.run_sql import run_sql
+import string
 
 from models.city import City
 from models.country import Country
@@ -6,8 +7,9 @@ from models.country import Country
 import repositories.country_repository as country_repository
 
 def save(city):
+    result = string.capwords(city.name)
     sql = "INSERT INTO cities(name, country_id, notes, visited) VALUES (%s, %s, %s, %s) RETURNING id"
-    values = [city.name.capitalize(), city.country.id, city.notes, city.visited] 
+    values = [result, city.country.id, city.notes, city.visited] 
     results = run_sql(sql, values)
     id = results[0]['id']
     city.id = id
@@ -50,8 +52,9 @@ def select_city_by_country(id):
     return cities
 
 def update(city):
+    result = string.capwords(city.name)
     sql = "UPDATE cities SET (name, country_id, notes, visited) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [city.name.capitalize(), city.country.id, city.notes, city.visited, city.id]
+    values = [result, city.country.id, city.notes, city.visited, city.id]
     print(values)
     run_sql(sql, values)
 
