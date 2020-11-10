@@ -20,7 +20,6 @@ def show_attraction(id):
     attraction = attraction_repository.select(id)
     return render_template("attractions/show.html", attraction = attraction)
 
-
 # NEW
 @attractions_blueprint.route("/attractions/new", methods=["GET"])
 def new_attraction():

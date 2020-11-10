@@ -3,6 +3,7 @@ import string
 
 from models.country import Country
 
+# SAVE COUNTRY
 def save(country):
     result = string.capwords(country.name)
     sql = "INSERT INTO countries(name, continent) VALUES ( %s, %s ) RETURNING id"
@@ -12,6 +13,7 @@ def save(country):
     country.id = id
     return country
 
+# SELECT ALL COUNTRIES
 def select_all():
     countries = []
 # when I list countries I want them to be alphabetical order each time
@@ -23,6 +25,7 @@ def select_all():
         countries.append(country)
     return countries
 
+# SELECT COUNTRY BY ID
 def select(id):
     country = None
     sql = "SELECT * FROM countries WHERE id = %s"
@@ -33,6 +36,7 @@ def select(id):
         country = Country(result['name'], result['continent'], result['id'])
     return country
 
+# UPDATE COUNTRY
 def update(country):
     result = string.capwords(country.name)
     sql = "UPDATE countries SET (name, continent) = (%s, %s) WHERE id = %s"
@@ -40,10 +44,12 @@ def update(country):
     print(values)
     run_sql(sql, values)
 
+# DELETE ALL COUNTRIES
 def delete_all():
     sql = "DELETE FROM countries"
     run_sql(sql)
 
+# DELETE COUNTRY BY ID
 def delete(id):
     sql = "DELETE FROM countries WHERE id = %s"
     values = [id]

@@ -31,6 +31,7 @@ def select_all():
         attractions.append(attraction)
     return attractions
 
+
 # SELECT ATTRACTION BY ID
 def select(id):
     attraction = None
@@ -42,20 +43,6 @@ def select(id):
         city = city_repository.select(result['city_id'])
         attraction = Attraction(result['name'], result['cost'], city, result['id'])
     return attraction
-
-# SELECT ATTRACTION BY CITY
-def select_attraction_by_city(id):
-    attractions = []
-
-    sql = "SELECT * FROM attractions WHERE city_id = %s"
-    values = [id]
-    results = run_sql(sql, values)
-
-    for row in results:
-        city = city_repository.select(row['city_id'])
-        attraction = Attraction(row['name'], row['cost'], city, row['id'])
-        attractions.append(attraction)
-    return attractions
 
 # UPDATE ATTRACTION
 def update(attraction):
