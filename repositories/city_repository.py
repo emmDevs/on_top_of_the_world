@@ -55,6 +55,35 @@ def update(city):
     print(values)
     run_sql(sql, values)
 
+
+# I want to select all visited cities
+def select_all_visited():
+    cities = []
+# I want to return the list of cities in alphabetical order
+    sql = "SELECT * FROM cities WHERE visited = %s ORDER BY name ASC"
+    values = [True]
+    results = run_sql(sql, values)
+
+    for row in results:
+        country = country_repository.select(row['country_id'])
+        city = City(row['name'], country, row['notes'], row['visited'], row['id'])
+        cities.append(city)
+    return cities
+
+# I want to select all unvisited cities
+def select_all_not_visited():
+    cities = []
+# I want to return the list of cities in alphabetical order
+    sql = "SELECT * FROM cities WHERE visited is FALSE ORDER BY name ASC"
+    results = run_sql(sql)
+
+    for row in results:
+        country = country_repository.select(row['country_id'])
+        city = City(row['name'], country, row['notes'], row['visited'], row['id'])
+        cities.append(city)
+    return cities
+
+
 def delete_all():
     sql = "DELETE FROM cities"
     run_sql(sql)    

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+        <p>Here are all the Cities you have visited:</p>
+        <hr>
+        {% for city in cities %}
+            <p>{{city.name}}</p>
+        {% endfor %}
+    </div>
+{% endblock content %}

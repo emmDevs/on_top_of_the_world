@@ -20,6 +20,16 @@ def show_city(id):
     attractions = attraction_repository.select_attraction_by_city(id)
     return render_template("cities/show.html", city = city, attractions = attractions)
 
+# SHOW LIST OF VISITED CITIES
+@cities_blueprint.route("/cities/visited", methods=["GET"])
+def show_visited_cities():
+    cities = city_repository.select_all_visited()
+    return render_template("cities/visited.html", cities = cities)
+
+# SHOW LIST OF CITIES STILL TO VISIT
+@cities_blueprint.route("/cities/not_visited", methods=["GET"])
+
+
 
 # NEW
 
