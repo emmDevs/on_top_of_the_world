@@ -43,11 +43,24 @@ def create_attraction():
 
 
 # EDIT
-
+@attractions_blueprint.route("/attractions/<id>/edit", methods=["GET"])
+def edit_attraction(id):
+    attraction = attraction_repository.select(id)
+    cities = city_repository.select_all()
+    return render_template("attractions/edit.html", attraction = attraction, cities = cities)
 
 
 # UPDATE
+@attractions_blueprint.route("/attractions/<id>", methods=["POST"])
+def update_attraction(id):
+    name = request.form["name"]
+    cost = request.form["cost"]
+    city_id = request.form["city_id"]
 
+    city = city_repository.select(city_id)
+    attraction = Attraction(name, cost, city, id)
+    attraction_repository.update(attraction)
+    return redirect(f"/attractions/{id}")
 
 
 # DELETE

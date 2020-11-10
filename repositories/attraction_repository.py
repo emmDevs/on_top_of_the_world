@@ -51,6 +51,12 @@ def select_attraction_by_city(id):
         attractions.append(attraction)
     return attractions
 
+def update(attraction):
+    sql = "UPDATE attractions SET (name, cost, city_id) = (%s, %s, %s) WHERE id = %s"
+    values = [attraction.name, attraction.cost, attraction.city.id, attraction.id]
+    print(values)
+    run_sql(sql, values)
+
 def delete_all():
     sql = "DELETE FROM attractions"
     run_sql(sql)
