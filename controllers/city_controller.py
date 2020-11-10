@@ -28,6 +28,9 @@ def show_visited_cities():
 
 # SHOW LIST OF CITIES STILL TO VISIT
 @cities_blueprint.route("/cities/not_visited", methods=["GET"])
+def show_cities_to_visit():
+    cities = city_repository.select_all_not_visited()
+    return render_template("cities/not_visited.html", cities = cities)
 
 
 
