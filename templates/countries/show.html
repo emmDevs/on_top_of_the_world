@@ -2,9 +2,9 @@
 {% block content %}
     
 <div>
-    <p>{{country.name}}</p>
+    <p><b>{{country.name}}</b></p>
     <hr>
-    <p>Continent: {{country.continent.capitalize()}}</p>
+    <p>Continent:<b> {{country.continent.capitalize()}}</b></p>
     <form action="/countries/{{country.id}}/edit">
         <button class="button" type="submit">Edit Country
         </button>
@@ -14,6 +14,7 @@
         </button>
     </form>
     <p>List of Cities in {{country.name}} that you would like to visit:</p>
+    <hr>
     {% for city in cities %}
         <p>{{city.name}}</p>
     {% endfor %}
