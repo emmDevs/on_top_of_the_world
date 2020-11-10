@@ -23,7 +23,7 @@ input[type=text] {
     padding: 10px;
     margin: 10px 0;
     border: 0;
-    border-radius: ;
+    border-radius:10px;
 }
 
 input[type=number] {
@@ -32,13 +32,11 @@ input[type=number] {
     border: 0;
 }
 
-.edit_attraction{
-
-}
-
-/* .edit_attraction_name {
-    margin-bottom: 25px;
-
+select {
+    padding: 10px;
+    margin: 10px 0;
+    border: 0;
+    border-radius: 10px;
 }
 
 .edit_attraction-city_name{

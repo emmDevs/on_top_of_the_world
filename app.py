@@ -27,27 +27,7 @@ def display_search_results(search):
     return render_template('/search.html', search_results = search_results)
 
 
-# @app.route('/<search>')
-# def user_search(search):
-#     search_results = []
-#     sql = SELECT * FROM attractions WHERE attraction.name LIKE % %s % UNION ALL SELECT * FROM cities where city.name LIKE % %s % UNION ALL SELECT * FROM countries WHERE countries.name like % %s %
-#     values = [search]
-#     results = run_sql(sql, values)
-
-#     for row in results:
-#         result_attraction = attraction_repository.select(id)
-#         attraction = Attraction(row['name'], row['cost'], city, row['id'])
-#         result_city = city_repository.select(id)
-#         city = City(row['name'], country, row['notes'], row['visited'], row['id'])
-#         result_country = country_repository.select(id)
-#         country = Country(row['name'], row['continent'], row['id'])
-#         search_results.append(attraction)
-#         search_results.append(city)
-#         search_results.append(country)
-#     return search_results
-#     return render_template('search.html', search_results = search_results)
-
-
+# 
 # @app.route('/<search>')
 # def user_search(search):
 #     attraction = Attraction(row['name'], row['cost'], city, row['id'])

@@ -29,7 +29,6 @@ def new_attraction():
     return render_template("attractions/new.html", attractions = attractions, cities = cities)
 
 # CREATE
-
 @attractions_blueprint.route("/attractions", methods=['POST'])
 def create_attraction():
     name = request.form["name"]
