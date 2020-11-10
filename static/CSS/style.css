@@ -4,27 +4,39 @@ body{
     
 }
 
+h1 {
+    text-align: center;
+    font-size: 42px;
+    margin-top: 150px;
+}
+
+
 .index{
     padding-left: 36px;
+    text-align: center;
 }
-ul.navbar {
+.navbar {
     display: flex;
     flex-direction: column; 
     padding-top: 36px;
     padding-bottom: 10px;
 }
 
-ul.navbar > li {
+.navbar > nav > ul > li {
     padding-right: 15px;
     padding-top: 10px;
     
 }
 
-ul.navbar > li > a {
+.navbar > nav > ul > li > a {
     color: black;
     font-size: 24;
     font-weight: bold;
     text-decoration: none;
+}
+
+.navbar > nav > ul {
+    list-style: none;
 }
 
 .navbar {
@@ -32,8 +44,6 @@ ul.navbar > li > a {
     background-size: cover;
     width: 100%;
     height: 450px;
-    list-style: none;
-
 }
 
 .button {
@@ -42,6 +52,15 @@ ul.navbar > li > a {
     background-color: blue;
     border-radius: 5px;
     margin: 10px;
+}
+
+.button_add_country {
+    color: white;
+    border: 1px solid blue;
+    background-color: blue;
+    border-radius: 5px;
+    margin: 10px;
+    padding-left: 36px;
 }
 
 input[type=text] {
@@ -55,6 +74,7 @@ input[type=number] {
     padding: 10px;
     margin: 10px 0;
     border: 0;
+    border-radius: 10px;
 }
 
 button[type=submit] {
@@ -71,8 +91,8 @@ select {
 
 .index_buttons {
     display: flex;
-    align-items: flex-start;
     padding-left: 36px;
+
 }
 
 .edit_attraction-city_name{
@@ -84,5 +104,27 @@ select {
 }
 
 .search {
+    padding-left: 36px;
+}
+
+.countries_list{
+    padding-left: 36px;
+    display: flex;
+    flex-flow: row wrap;
+}
+.countries_list > p {
+    width: 25px;
+    height: 50px;
+    background-color: lightblue;
+    border: solid 1px blanchedalmond;
+    flex: 20%;
+    flex-wrap: wrap;
+  }
+
+.cities_list {
+    padding-left: 36px;
+}
+
+.attractions_list {
     padding-left: 36px;
 }

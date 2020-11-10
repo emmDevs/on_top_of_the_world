@@ -2,17 +2,20 @@
 
 {% block content %}
 
-<div>
-    {% for attraction in attractions %}
-        <p><a href="/attractions/{{attraction.id}}">{{attraction.name}}</a>:  {{attraction.city.name}} </p>
-    {% endfor %}
-</div>
-    
+<div class = "attractions_list">
     <form action="attractions/new"> 
         <button class="button" type="submit">
         Add New Attraction
         </button>
     </form>
+    <br>
+    {% for attraction in attractions %}
+        <p><a href="/attractions/{{attraction.id}}">{{attraction.name}}</a>:  {{attraction.city.name}} </p>
+    {% endfor %}
+
+    
+    
+    </div>
 
 
 {% endblock content %}

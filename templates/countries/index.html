@@ -2,17 +2,19 @@
 
 {% block content %}
     
-    <div>
+    
+        <form action="countries/new"> 
+            <button class="button_add_country" type="submit">
+            Add New Country
+            </button>
+        </form>
+        <div class="countries_list">
         {% for country in countries %}
             <p><a href="/countries/{{country.id}}">{{country.name}}</a></p>
         {% endfor %}
-    </div>
-    <form action="countries/new"> 
-        <button class="button" type="submit">
-        Add New Country
-        </button>
-    </form>
-
+    
+    
+    </div>  
 
 {% endblock content %}
 
