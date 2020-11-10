@@ -8,7 +8,7 @@ import repositories.city_repository as city_repository
 
 def save(attraction):
     sql = "INSERT INTO attractions(name, cost, city_id) VALUES (%s, %s, %s) RETURNING id"
-    values = [attraction.name, attraction.cost, attraction.city.id]
+    values = [attraction.name.capitalize(), attraction.cost, attraction.city.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     attraction.id = id
@@ -53,7 +53,7 @@ def select_attraction_by_city(id):
 
 def update(attraction):
     sql = "UPDATE attractions SET (name, cost, city_id) = (%s, %s, %s) WHERE id = %s"
-    values = [attraction.name, attraction.cost, attraction.city.id, attraction.id]
+    values = [attraction.name.capitalize(), attraction.cost, attraction.city.id, attraction.id]
     print(values)
     run_sql(sql, values)
 

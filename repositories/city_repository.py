@@ -7,7 +7,7 @@ import repositories.country_repository as country_repository
 
 def save(city):
     sql = "INSERT INTO cities(name, country_id, notes, visited) VALUES (%s, %s, %s, %s) RETURNING id"
-    values = [city.name, city.country.id, city.notes, city.visited] 
+    values = [city.name.capitalize(), city.country.id, city.notes, city.visited] 
     results = run_sql(sql, values)
     id = results[0]['id']
     city.id = id
@@ -51,7 +51,7 @@ def select_city_by_country(id):
 
 def update(city):
     sql = "UPDATE cities SET (name, country_id, notes, visited) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [city.name, city.country.id, city.notes, city.visited, city.id]
+    values = [city.name.capitalize(), city.country.id, city.notes, city.visited, city.id]
     print(values)
     run_sql(sql, values)
 

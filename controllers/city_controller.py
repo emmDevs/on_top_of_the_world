@@ -33,7 +33,6 @@ def show_cities_to_visit():
     return render_template("cities/not_visited.html", cities = cities)
 
 
-
 # NEW
 
 @cities_blueprint.route("/cities/new", methods=["GET"])

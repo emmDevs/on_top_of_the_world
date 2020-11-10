@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        {% for result in search_results %}
+            <p>{{city.name}}</p>
+        {% endfor %}
+    </div>
+
+{% endblock content %}
