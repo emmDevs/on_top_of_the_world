@@ -3,7 +3,7 @@
     <div>
         <p><b>{{attraction.name}}</b></p>
         <hr>
-        <p>Cost: {{attraction.cost}}</p>
+        <p>Cost: £{{attraction.cost}}</p>
         <p>City: {{attraction.city.name}}</p>
     </div>
     <form action="/attractions/{{attraction.id}}/edit">
@@ -18,4 +18,4 @@
         <button class="button" type="submit">See all Attractions
         </button>
     </form>
-{% endblock content %} 
+{% endblock content %}

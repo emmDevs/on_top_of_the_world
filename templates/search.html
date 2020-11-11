@@ -3,7 +3,7 @@
 {% block content %}
     <div>
         {% for city in search_results %}
-            <p><b>{{city.name}}</b></p>
+        <p><a href="/cities/{{city.id}}"><b>{{city.name}}</b></a></p>
             <hr>
             <p>Country:  {{city.country.name}}</p>
             <p>Notes:  {{city.notes}}</p>
@@ -21,12 +21,10 @@
                     <button class="button" type="submit">Delete City
                     </button>
                 </form>
-                <div>
-                    <p>List of Attractions in {{city.name}} that you would like to visit:</p>
-                    {% for attraction in attractions %}
-                        <p>{{attraction.name}}</p>
-                    {% endfor %}
-                </div>
+                <form action="/">
+                    <button class="button" type="submit">Back to Search
+                    </button>
+                </form>
         {% endfor %}
     </div>
     
