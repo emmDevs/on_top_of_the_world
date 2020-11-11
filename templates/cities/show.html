@@ -2,7 +2,7 @@
 {% block content %}
     
 <div>
-    <p>{{city.name}}</p>
+    <p><b>{{city.name}}</b></p>
     <hr>
     <p>Country: {{city.country.name}}</p>
     <p>Notes: {{city.notes}}</p>
@@ -21,7 +21,8 @@
     </button>
 </form>
 <div>
-    <p>List of Attractions in {{city.name}} that you would like to visit:</p>
+    <p><b>List of Attractions in {{city.name}} that you would like to visit:</b></p>
+    <hr>
     {% for attraction in attractions %}
         <p>{{attraction.name}}</p>
     {% endfor %}

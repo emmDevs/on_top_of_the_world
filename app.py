@@ -28,13 +28,12 @@ def display_search_results():
     return render_template('search.html', search_results = search_results)
 
 
-# 
-# @app.route('/<search>')
-# def user_search(search):
-#     attraction = Attraction(row['name'], row['cost'], city, row['id'])
-#     city = City(row['name'], country, row['notes'], row['visited'], row['id'])
-#     country = Country(row['name'], row['continent'], row['id'])
-#     return render_template('search.html', attraction = attraction, city = city, country=country)
+
+# @app.route('/search', methods=["POST"])
+# def user_search():
+#     search=request.form["search"]
+#     search_results = search_repository.user_search(search)
+#     return render_template('search.html', search_results = search_results)
 
 if __name__ == '__main__':
     app.run(debug=True)
