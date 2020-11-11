@@ -9,7 +9,7 @@
     {% if city.visited == True %}
        <label for="">Visited?<i class="fa fa-check fa-2x" style="color:green" aria-hidden="true"></i></label>
         {% else %}
-        <label for="">Visited?<i class="fa fa-times fa-2x" aria-hidden="true"></i></label>
+        <label for="">Visited?<i class="fa fa-times fa-2x" style="color:red" aria-hidden="true"></i></label>
         {% endif %}
 </div>
 <form action="/cities/{{city.id}}/edit">

@@ -4,7 +4,7 @@
 <Section class="index">
 
 
-<p>Record your travel wishlist here!</p>
+<p>Record your travel wishlist here!  <i class="fas fa-umbrella-beach" style="color: black"></i></p>
 </Section>
 <section class="index_buttons">
 <form action="/cities/visited">
@@ -18,9 +18,14 @@
 </form>
 </section>
 
-<form class="search" action="/<search>">
-    <input type="text" value="search">
-    <button class="button" type="submit">Search</button>
+<form action="/search" method="POST">
+    <input type="search" name="search" id="search">
+    <button type="submit">Search</button>
 </form>
+
+<!-- <form  value="search" class="search" action="search">
+    <input type="text" placeholder="search">
+    <button class="button" type="submit">Search</button>
+</form> -->
 
 {% endblock %}

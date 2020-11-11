@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from db.run_sql import run_sql
 
 from models.attraction import Attraction
@@ -21,10 +21,11 @@ app.register_blueprint(attractions_blueprint)
 def home():
     return render_template('index.html')
 
-@app.route('/<search>')
-def display_search_results(search):
+@app.route('/search', methods=["POST"])
+def display_search_results():
+    search=request.form["search"]
     search_results = search_repository.user_search_cities(search)
-    return render_template('/search.html', search_results = search_results)
+    return render_template('search.html', search_results = search_results)
 
 
 # 

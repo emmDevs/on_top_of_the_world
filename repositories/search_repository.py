@@ -8,10 +8,10 @@ import repositories.attraction_repository as attraction_repository
 import repositories.city_repository as city_repository
 import repositories.country_repository as country_repository
 
-
+# Take user search input and return search results
 def user_search_cities(search):
     search_results = []
-    sql = "SELECT * FROM cities WHERE name LIKE %s%"
+    sql = "SELECT * FROM cities WHERE name = %s"
     values = [search]
     results = run_sql(sql, values)
 

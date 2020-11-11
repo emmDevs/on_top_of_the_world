@@ -2,9 +2,32 @@
 
 {% block content %}
     <div>
-        {% for result in search_results %}
-            <p>{{city.name}}</p>
+        {% for city in search_results %}
+            <p><b>{{city.name}}</b></p>
+            <hr>
+            <p>Country:  {{city.country.name}}</p>
+            <p>Notes:  {{city.notes}}</p>
+            {% if city.visited == True %}
+                <label for="">Visited?   <i class="fa fa-check fa-2x" style="color:green" aria-hidden="true"></i></label>
+                {% else %}
+                <label for="">Visited?   <i class="fa fa-times fa-2x" style="color:red" aria-hidden="true"></i></label>
+                {% endif %}
+
+                <form action="/cities/{{city.id}}/edit">
+                    <button class="button" type="submit">Edit City
+                    </button>
+                </form>
+                <form action="/cities/{{city.id}}/delete">
+                    <button class="button" type="submit">Delete City
+                    </button>
+                </form>
+                <div>
+                    <p>List of Attractions in {{city.name}} that you would like to visit:</p>
+                    {% for attraction in attractions %}
+                        <p>{{attraction.name}}</p>
+                    {% endfor %}
+                </div>
         {% endfor %}
     </div>
-
+    
 {% endblock content %}
