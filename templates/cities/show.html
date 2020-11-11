@@ -20,11 +20,15 @@
     <button class="button" type="submit">Delete City
     </button>
 </form>
+<form action="/cities">
+    <button class="button" type="submit">Back to Cities
+    </button>
+</form>
 <div>
     <p><b>List of Attractions in {{city.name}} that you would like to visit:</b></p>
     <hr>
     {% for attraction in attractions %}
-        <p>{{attraction.name}}</p>
+    <p><a href="/attractions/{{attraction.id}}">{{attraction.name}}</a></p>
     {% endfor %}
 </div>
 {% endblock content %}

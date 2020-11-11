@@ -3,8 +3,12 @@
     <div>
         <p><b>Here are all the Cities you would like to visit:</b></p>
         <hr>
+        <form action="/">
+            <button class="button" type="submit">Home
+            </button>
+        </form>
         {% for city in cities %}
-            <p>{{city.name}}</p>
+        <p><a href="/cities/{{city.id}}">{{city.name}}</a></p>
         {% endfor %}
     </div>
 {% endblock content %}
